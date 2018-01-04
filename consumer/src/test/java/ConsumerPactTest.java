@@ -32,7 +32,7 @@ public class ConsumerPactTest {
                 .willRespondWith()
                 .status(200)
                 .headers(headers)
-                .body("{\"active\": true, \"name\": \"Hari Krishnan\"}")
+                .body("{\"name\": \"Hari Krishnan\"}")
                 .toPact();
     }
 
@@ -42,6 +42,6 @@ public class ConsumerPactTest {
         ResponseEntity<String> response = new RestTemplate().getForEntity(mockProvider.getUrl(), String.class);
         assertThat(response.getStatusCode().value(), is(equalTo(200)));
 //        assertThat(response.getHeaders().getContentType(), is(equalTo("application/json")));
-        assertThat(response.getBody(), is(equalTo("{\"active\":true,\"name\":\"Hari Krishnan\"}")));
+        assertThat(response.getBody(), is(equalTo("{\"name\":\"Hari Krishnan\"}")));
     }
 }
