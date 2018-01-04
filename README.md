@@ -8,11 +8,11 @@ Pact Java Example
 * Broker
   * Now that you have the pact json, we need to publish it to the broker so that the provider can access it
   * Install postgres
-  * Run `docker_compose up` in the broker folder
+  * Run `docker-compose up` in the broker folder
   * Make sure broker is running and then run `gradle pactPublish` inside consumer project
   * Now you should be able to see the pact file published on the broker UI
 * Provider
   * Go to provider project
   * Run the SpringBoot application
   * Run `gradle pactVerify`
-
+  * The pact broker will now show verified
